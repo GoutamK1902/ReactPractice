@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+export default function MyApp() {
+  const hunter =
+    "https://imgd.aeplcdn.com/1056x594/n/bw/models/colors/royal-enfield-select-model-dapper-white-1668160571994.jpg?q=80&wm=3";
+  const ronin =
+    "https://imgd.aeplcdn.com/1056x594/n/bw/models/colors/tvs-select-model-galactic-grey-1657171920806.png?q=80&wm=3";
+
+  const [url, setUrl] = useState(hunter);
+  const [count, setCount] = useState(0);
+  const [btnColor, setBtnColor] = useState("red");
+
+  function handleClick() {
+    setUrl((currentBike) => (currentBike == ronin ? hunter : ronin));
+    setCount(count + 1);
+    setBtnColor((currentColor) => (currentColor == "red" ? "blue" : "red"));
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Bike Image Swap</h1>
+      <button
+        count={count}
+        style={{ backgroundColor: btnColor }}
+        onClick={handleClick}
+        className="btn"
+      >
+        Swap Bike - clicked {count}
+      </button>
+      <img src={url} alt="bike photo" style={{ width: "50dvw" }} />
     </div>
   );
 }
-
-export default App;
