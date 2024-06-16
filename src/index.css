@@ -5,20 +5,40 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.board-row {
+  display: flex;
 }
-.btn {
-  background-color: #353535;
+.board-row button {
+  width: 100px;
+  height: 100px;
+  font-size: 35px;
+  background-color: #222;
   color: #f2f2f2;
-  padding: 5px 8px;
-  border-radius: 6px;
-  font-size: 18px;
 }
-.btn:hover {
-  background-color: #555;
+.status {
+  font-size: 40px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+}
+.reset {
+  font-size: 25px;
+  color: #6464e0;
+  background-color: #fff;
+  margin-top: 10px;
+  width: 300px;
+  padding: 15px 8px;
+  border-radius: 12px;
+  outline: none;
+  border: 1px solid grey;
+  text-align: center; /* Ensure text is centered */
+}
+.reset:hover {
+  background-color: #6464e0;
   color: #fff;
 }
