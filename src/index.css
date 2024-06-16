@@ -12,7 +12,8 @@ body {
 }
 
 .board-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .board-row button {
   width: 100px;
@@ -25,6 +26,21 @@ body {
   font-size: 40px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: 700;
+}
+.steps {
+  width: 200px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #00abcd;
+  color: #000000;
+}
+.steps:hover{
+  color: #00abcd;
+  background-color: #000000;
 }
 .reset {
   font-size: 25px;
